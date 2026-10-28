@@ -1,0 +1,63 @@
+{
+    "name": "merxkit/ubl-tr",
+    "description": "Framework-agnostic UBL-TR builder and validator for Turkish e-Fatura and e-Arşiv invoices, with XSD and GİB schematron validation on stock PHP extensions.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "ubl",
+        "ubl-tr",
+        "e-fatura",
+        "efatura",
+        "e-arsiv",
+        "earsiv",
+        "e-invoice",
+        "gib",
+        "schematron",
+        "turkey"
+    ],
+    "authors": [
+        {
+            "name": "ArtisanXL",
+            "homepage": "https://github.com/merxkit"
+        }
+    ],
+    "require": {
+        "php": "^8.3",
+        "ext-dom": "*",
+        "ext-libxml": "*",
+        "ext-xsl": "*",
+        "brick/math": "^1.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.95",
+        "phpstan/phpstan": "^2.3",
+        "phpstan/phpstan-strict-rules": "^2.1",
+        "phpunit/phpunit": "^12.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Merxkit\\UblTr\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Merxkit\\UblTr\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "scripts": {
+        "test": "phpunit",
+        "analyse": "phpstan analyse",
+        "cs": "php-cs-fixer check --diff",
+        "cs:fix": "php-cs-fixer fix",
+        "check": [
+            "@cs",
+            "@analyse",
+            "@test"
+        ]
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

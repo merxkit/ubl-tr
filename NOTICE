@@ -1,0 +1,12 @@
+merxkit/ubl-tr
+Copyright (c) 2026 merxkit. Licensed under the MIT License (see LICENSE).
+
+Third-party material
+--------------------
+
+Files under resources/gib/ (once bundled) are derived from the UBL-TR and e-Fatura packages
+published by the Turkish Revenue Administration (Gelir İdaresi Başkanlığı, GİB)
+at https://ebelge.gib.gov.tr/. They are redistributed unmodified, except that
+schematron rules are transpiled to XSLT 1.0. GİB publishes these files without
+an explicit licence; they are not covered by this project's MIT licence. The
+UBL 2.1 schemas they include are Copyright (c) OASIS Open.
