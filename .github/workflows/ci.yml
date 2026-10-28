@@ -11,21 +11,21 @@ permissions:
 jobs:
   quality:
     name: Coding standard & static analysis
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       - uses: shivammathur/setup-php@v2
         with:
           php-version: '8.3'
           extensions: dom, libxml, xsl
           coverage: none
-      - uses: ramsey/composer-install@v3
+      - uses: ramsey/composer-install@v4
       - run: composer cs
       - run: composer analyse
 
   tests:
     name: Tests (PHP ${{ matrix.php }}, ${{ matrix.dependencies }})
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     strategy:
       fail-fast: false
       matrix:
@@ -35,13 +35,13 @@ jobs:
           - php: '8.3'
             dependencies: lowest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       - uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
           extensions: dom, libxml, xsl
           coverage: none
-      - uses: ramsey/composer-install@v3
+      - uses: ramsey/composer-install@v4
         with:
           dependency-versions: ${{ matrix.dependencies }}
       - run: composer test
